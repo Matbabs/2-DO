@@ -1,0 +1,15 @@
+.api-containers {
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.api-containers > div > span {
+    color: var(--primary);
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary);
+    font-size: 0.8em;
+    word-break: break-all;
+}

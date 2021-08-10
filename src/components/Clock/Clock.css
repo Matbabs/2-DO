@@ -1,0 +1,45 @@
+.clock-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: solid 2px var(--dark);
+    border-radius: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.center {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    background: var(--dark);
+}
+
+.arrow {
+    position: absolute;
+    height: 2px;
+    background: var(--dark);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: top left;
+}
+
+.hours {
+    width: 20%;
+}
+
+.minutes {
+    width: 30%;
+}
+
+.seconds {
+    width: 40%;
+    background: var(--primary);
+}

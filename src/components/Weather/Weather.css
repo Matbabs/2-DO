@@ -1,0 +1,26 @@
+.weather-container {
+    height: 200px;
+    width: 250px;
+}
+
+.weather-container small {
+    color: var(--primary);
+}
+
+.weather-container > div {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.weather-container > div img {
+    width: 70px;
+    background: var(--primary);
+    border-radius: 100%;
+}
+
+.weather-container > div span {
+    color: var(--secondary);
+}

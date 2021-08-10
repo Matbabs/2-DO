@@ -1,0 +1,57 @@
+.google-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.google-container * {
+    margin-bottom: 25px;
+}
+
+.google-container img {
+    height: 70px;
+}
+
+.google-container > input, button {
+    width: 575px;
+    border-radius: var(--radius);
+    border: solid 2px var(--dark);
+    padding: 8px;
+    font-size: 0.8em;
+    transition: all 250ms;
+    background: var(--light);
+    color: var(--dark);
+}
+
+.google-container > input:focus {
+    border: solid 2px var(--primary);
+}
+
+.google-container > button {
+    width: 150px;
+    border: solid 2px var(--primary);
+    background: var(--primary);
+    color: var(--light);
+}
+
+.google-container > button:hover {
+    cursor: pointer;
+    background: var(--secondary);
+    border: solid 2px var(--secondary);
+}
+
+.app-google {
+    display: flex;
+}
+
+.app-google img {
+    height: 50px;
+    margin: 0px 25px 0px 25px;
+    transition: all 250ms;
+}
+
+.app-google img:hover {
+    cursor: pointer;
+    transform: scale(0.8);
+}

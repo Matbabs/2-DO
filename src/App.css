@@ -1,0 +1,32 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.navbar {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 50px;
+}
+
+.navbar > .material-icons {
+  font-size: 1.5em;
+  transition: all 250ms;
+  margin-left: 25px;
+}
+
+.navbar > .material-icons:hover {
+  cursor: pointer;
+  transform: rotate(25deg);
+}
+
+.title {
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+  font-size: 2.5em;
+  font-family: "Quantum";
+}
