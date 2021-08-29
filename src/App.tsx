@@ -42,7 +42,6 @@ function App() {
       component: <Weather city="Rennes" state="Brittany" country="France"/>,
       position: {x: 1000, y: 25}
     },
-    ,
     {
       title: "weather Biarritz",
       component: <Weather city="Biarritz" state="Nouvelle-Aquitaine" country="France"/>,

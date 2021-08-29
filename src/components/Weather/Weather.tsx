@@ -4,15 +4,14 @@ import "./Weather.css"
 
 export default function Weather(props: any) {
 
-    const wt: any = {}
     const {city, state, country} = props
-    const [weather, setWeather] = useState(wt)
+    const [weather, setWeather] = useState({} as any)
 
     useEffect(() => {
         const sub = weatherService.weather.subscribe(() => setWeather(weatherService.maps.get(city)))
         weatherService.getWeather(city, state, country)
         return () => sub.unsubscribe()
-    }, [true])
+    }, [city, state, country])
 
     return (
         <div className="weather-container">
@@ -28,7 +27,7 @@ export default function Weather(props: any) {
                         Atmo prs: <span> {weather.data.current.weather.pr}hPa </span> <br/>
                         Aqicn: <span> {weather.data.current.pollution.aqicn} </span> 
                     </div>
-                    <img src={`http://openweathermap.org/img/wn/${weather.data.current.weather.ic}@2x.png`}/>
+                    <img src={`http://openweathermap.org/img/wn/${weather.data.current.weather.ic}@2x.png`} alt="weather icon"/>
                 </div>
             )}
         </div>

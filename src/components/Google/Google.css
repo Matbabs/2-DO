@@ -25,6 +25,7 @@
 }
 
 .google-container > input:focus {
+    outline: none;
     border: solid 2px var(--primary);
 }
 

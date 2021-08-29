@@ -10,7 +10,7 @@ export default function API() {
         const sub = apiService.news.subscribe(setAPI)
         apiService.getNews()
         return () => sub.unsubscribe()
-    }, [true])
+    }, [])
 
     return (
         <div className="api-containers">
