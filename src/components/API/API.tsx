@@ -18,13 +18,10 @@ export default function API() {
                 <div key={id}>
                     <span> {art.API}</span> <br/>
                     <small>{art.Description}</small> <br/>
-                    <a href={`${art.Link}`}>{art.Link}</a>
+                    <a href={art.Link}>{art.Link}</a>
                    <hr/>
                 </div>
-                
             ))}
         </div>
-       
     )
-
 }

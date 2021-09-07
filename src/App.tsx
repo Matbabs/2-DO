@@ -54,21 +54,18 @@ function App() {
     }
   ]
 
-  function lightMode() {
+  function switchCSS(prop1: string, prop2: string) {
     const root =  document.documentElement
     const style = getComputedStyle(root)
+    const save = style.getPropertyValue(prop1)
+    root.style.setProperty(prop1, style.getPropertyValue(prop2))
+    root.style.setProperty(prop2, save)
+  }
 
-    const light = style.getPropertyValue('--light')
-    root.style.setProperty('--light', style.getPropertyValue('--dark'))
-    root.style.setProperty('--dark', light)
-
-    const primary = style.getPropertyValue('--primary')
-    root.style.setProperty('--primary', style.getPropertyValue('--primary-dark'))
-    root.style.setProperty('--primary-dark', primary)
-
-    const secondary = style.getPropertyValue('--secondary')
-    root.style.setProperty('--secondary', style.getPropertyValue('--secondary-dark'))
-    root.style.setProperty('--secondary-dark', secondary)
+  function lightMode() {
+    switchCSS('--light', '--dark')
+    switchCSS('--primary', '--primary-dark')
+    switchCSS('--secondary', '--secondary-dark')
   }
 
   function resetViewport() {
