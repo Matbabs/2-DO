@@ -17,8 +17,8 @@
 
 .weather-container > div img {
     width: 70px;
-    background: var(--primary);
     border-radius: 100%;
+    border: solid 2px var(--dark);
 }
 
 .weather-container > div span {
