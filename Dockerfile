@@ -1,10 +1,8 @@
-FROM node:latest
+FROM nginx:alpine
 
-ADD . /app/
-WORKDIR /app
-
-RUN npm install
+COPY /build /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["nginx", "-g", "daemon off;"]
