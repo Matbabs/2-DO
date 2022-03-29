@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 2do-deployment
+spec:
+  selector:
+    matchLabels:
+      app: 2do
+      tier: front
+      track: stable
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: 2do
+        tier: front
+        track: stable
+    spec:
+      topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: zone
+        whenUnsatisfiable: ScheduleAnyway
+        labelSelector:
+          matchLabels:
+            tier: front
+      - maxSkew: 1
+        topologyKey: node
+        whenUnsatisfiable: ScheduleAnyway
+        labelSelector:
+          matchLabels:
+            tier: front
+      containers:
+        - name: 2do
+          image: ##IMAGE##
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 3000
