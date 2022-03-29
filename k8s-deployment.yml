@@ -37,7 +37,7 @@ spec:
             tier: front
       containers:
         - name: 2do
-          image: ##IMAGE##
+          image: 019205998470.dkr.ecr.eu-west-1.amazonaws.com/ptft-ecr-repository:2do
           imagePullPolicy: Always
           ports:
             - name: http
